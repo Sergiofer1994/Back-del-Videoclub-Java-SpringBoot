@@ -1,6 +1,5 @@
 package Inditex.EscenaDelCrimenVideoclub.model;
 
-
 import jakarta.persistence.*;
 
 @Entity
@@ -14,25 +13,30 @@ public class Movie {
     private int year;
     private String director;
     private String main_cast;
-    private double filmAffinity_score;
+    @Column(name = "film_affinity_score")
+    private double filmaffinity_score;
     private String description;
     private String img;
     private String url;
+    private String trailer;
     private double ranking;
+    private String category;
+
+
     public Movie() {}
 
-    public Movie(String title, int year, String director, String main_cast, double filmAffinity_score, String description, String img, String url, double ranking) {
+    public Movie(String title, int year, String director, String main_cast, double filmaffinity_score, String description, String img, String url, double ranking, String category) {
         this.title = title;
         this.year = year;
         this.main_cast = main_cast;
         this.director = director;
-        this.filmAffinity_score = filmAffinity_score;
+        this.filmaffinity_score = filmaffinity_score;
         this.description = description;
         this.img = img;
         this.url = url;
         this.ranking = ranking;
+        this.category = category;
     }
-
     public double getRanking() {
         return ranking;
     }
@@ -73,12 +77,12 @@ public class Movie {
         this.main_cast = main_cast;
     }
 
-    public double getFilmAffinity_score() {
-        return filmAffinity_score;
+    public double getFilmaffinity_score() {
+        return filmaffinity_score;
     }
 
-    public void setFilmAffinity_score(double filmAffinity_score) {
-        this.filmAffinity_score = filmAffinity_score;
+    public void setFilmaffinity_score(double filmaffinity_score) {
+        this.filmaffinity_score = filmaffinity_score;
     }
 
     public String getDescription() {
@@ -103,5 +107,28 @@ public class Movie {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getTrailer() {
+        return trailer;
+    }
+
+    public void setTrailer(String trailer) {
+        this.trailer = trailer;
+    }
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
